@@ -6,28 +6,6 @@
 
 {% block body %}
 
-
-{# <div class="example-wrapper">
-  <h1>Hello
-    {{ controller_name }}! ✅</h1>
-
-  {% for flashError in app.flashes('success') %}
-  <div class="alert alert-success" role="alert">{{ flashError }}</div>
-  {% endfor %}
-
-  This friendly message is coming from:
-  <ul>
-    <li>Your controller at
-      <code>
-					<a href="{{ 'C:/Users/brice/Desktop/mon-nouveau-projet-main/mon-nouveau-projet-main/src/Controller/MainCController.php'|file_link(0) }}">src/Controller/MainCController.php</a>
-				</code>
-    </li>
-    <li>Your template at
-      <code>
-					<a href="{{ 'C:/Users/brice/Desktop/mon-nouveau-projet-main/mon-nouveau-projet-main/templates/main_c/index.html.twig'|file_link(0) }}">templates/main_c/index.html.twig</a>
-				</code>
-    </li>
-  </ul> #}
   <section id="main-img">
 
     <form action="search" id="form-home">
@@ -111,7 +89,7 @@
       <p class="titre1 d-flex justify-content-center">NOTRE SELECTION</p>
       <hr class="mb-5">
       </hr>
-      <div class="row">
+      <div class="row d-flex justify-content-between">
         <div class="col-md-4">
           <a href="rechercheV.html">
             <div class="card shadow-sm mb-5">
@@ -230,15 +208,15 @@
 </div>
 
 <section class="picto">
-  <div class="container d-flex justify-content-around align-items-center" style="height:100%">
-    <div class="contain-img">
+  <div class="container">
+    <div class="contain-img d-flex justify-content-around align-item-center" style="height:100%">
       <div class="column d-flex flex-column text-center">
         <img src="{{ asset('img/picto-avion.png') }}" alt="picto-avion" class="picto-img">
         <p class="descr-picto">Transport inclu.</p>
       </div>
       <div class="column d-flex flex-column">
         <img src="{{ asset('img/placeholder.png') }}" alt="picto-map" class="picto-img">
-        <p class="descr-picto">Destination aux Choix.</p>
+        <p class="descr-picto1">Destination aux Choix.</p>
       </div>
       <div class="column d-flex flex-column">
         <img src="{{ asset('img/shopping-bag.png') }}" alt="picto-shop" class="picto-img">
@@ -258,7 +236,8 @@
   .typing-demo1 {
     width: 50ch;
     color: white;
-    animation: fadeIn 2s forwards .5s;
+    opacity: 0;
+    animation: fadeIn 3s forwards .5s;
   }
 
   .typing-demo {
@@ -539,10 +518,10 @@
     color: #FFA755;
   }
 
-  .row {
+  /* .row {
     display: flex;
     justify-content: space-around;
-  }
+  } */
 
   /* !!!!!!!!!!!!!!!!!!!!!!!!!!! */
   /* !!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -553,18 +532,74 @@
     background-image: url("https://zupimages.net/up/21/09/74a2.png");
     background-repeat: no-repeat;
     margin: 50px 0px;
-    height: 450px;
+    height: 180px;
     width: auto;
     background-size: 100%;
     box-shadow: 0px 3px 4px #c4c4c4;
+    display: flex;
+    align-items: center;
   }
 
   .picto-img {
+    margin: 25px 0px 10px 0px;
+    width: 50px;
+    height: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4F555C;
+  }
+  .descr-picto{
+    margin-left: -10px;
+    font-size: 10px;
+  }
+  .descr-picto1{
+    margin-left: -35px;
+    font-size: 12px;
+  }
+  
+  @media screen and (min-width: 770px) and (max-width: 990px) {
+    .picto{
+    margin-top: 50px;
+    height: 200px;
+    width: auto;
+    background-size: 100%;
+    }
+    .picto-img {
+    margin: 25px 0px 10px 0px;
+    width: 55px;
+    height: 65px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4F555C;
+  }
+  .descr-picto{
+    font-size: 14px;
+  }
+  .descr-picto1{
+    font-size: 14px;
+  }
+  }
+  @media screen and (min-width:991px) {
+    .picto{
+    margin-top: 50px;
+    height: 450px;
+    width: auto;
+    background-size: 100%;
+    }
+    .picto-img {
     margin: 25px 0px 10px 0px;
     width: 80px;
     height: 100px;
     padding-bottom: 10px;
     border-bottom: 1px solid #4F555C;
   }
+  .descr-picto{
+    margin-left: -17px;
+    font-size: 19px;
+  }
+  .descr-picto1{
+    margin-left: -50px;
+    font-size: 19px;
+  }
+  }
+
 </style>
 {% endblock %}
